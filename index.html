@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <title>Number Guessing Game with Score</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Number Guessing Game with Score</h1>
-    <p>Guess a number from 1 to <span id="max">2</span></p>
+    <p>Guess a number from 1 to <span id="max">x</span></p>
     <p>Score: <span id="score"></span></p>
     <p>Guesses left: <span id="attempts"></span></p>
     <p>Level: <span id="level"></span></p>
@@ -13,8 +14,8 @@
       Start
     </button>
     <p>Feedback: <span id="feedback"></span></p>
-    <input type="number" id="guess" min="1" max="2" step="1" />
-    <!--button to check guess number--><button id="guess-button" type="button">
+    <input type="number" id="guess" min="1" max="2" step="1" required />
+    <!--button to check guess number--><button type="button" id="guess-button">
       Guess
     </button>
     <script src="app.js"></script>
