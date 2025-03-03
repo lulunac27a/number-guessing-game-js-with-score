@@ -43,8 +43,8 @@ const game = () => {
   };
   const checkGuess = () => {
     //check guess
-    guess = parseInt(guessText.value); //get guess value from input
-    if (guess != secret) {
+    guess = parseInt(guessText.value, 10); //get guess value from input
+    if (guess !== secret) {
       //check if guess is equal to secret number
       if (guess > secret) {
         //too high
