@@ -17,10 +17,10 @@ const game = () => {
   let feedbackText = document.getElementById("feedback");
   startButton.addEventListener("click", startGame);
   guessButton.addEventListener("click", checkGuess);
-  function randomInt(minimum, maximum) {
+  const randomInt = (minimum, maximum) => {
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-  }
-  function startGame() {
+  };
+  const startGame = () => {
     level = 1;
     attempts = 0;
     score = 0;
@@ -38,8 +38,8 @@ const game = () => {
     guessText.value = guess;
     startButton.disabled = true;
     guessButton.disabled = false;
-  }
-  function checkGuess() {
+  };
+  const checkGuess = () => {
     guess = parseInt(guessText.value);
     if (guess != secret) {
       if (guess > secret) {
@@ -91,6 +91,6 @@ const game = () => {
       levelText.textContent = level;
       guessText.max = maxGuess;
     }
-  }
+  };
 };
 game();
