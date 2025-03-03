@@ -7,7 +7,6 @@ const game = () => {
   let guess = 0;
   let maxGuess = 2 ** level;
   let secret = randomInt(1, maxGuess);
-  let feedback = "";
   let maxText = document.getElementById("max");
   let scoreText = document.getElementById("score");
   let attemptsText = document.getElementById("attempts");
