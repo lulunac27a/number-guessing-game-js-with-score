@@ -7,14 +7,14 @@ const game = () => {
   let guess = 0;
   let maxGuess = 2 ** level;
   let secret = randomInt(1, maxGuess);
-  let maxText = document.getElementById("max");
-  let scoreText = document.getElementById("score");
-  let attemptsText = document.getElementById("attempts");
-  let levelText = document.getElementById("level");
-  let guessText = document.getElementById("guess");
-  let startButton = document.getElementById("start-button");
-  let guessButton = document.getElementById("guess-button");
-  let feedbackText = document.getElementById("feedback");
+  const maxText = document.getElementById("max");
+  const scoreText = document.getElementById("score");
+  const attemptsText = document.getElementById("attempts");
+  const levelText = document.getElementById("level");
+  const guessText = document.getElementById("guess");
+  const startButton = document.getElementById("start-button");
+  const guessButton = document.getElementById("guess-button");
+  const feedbackText = document.getElementById("feedback");
   startButton.addEventListener("click", startGame);
   guessButton.addEventListener("click", checkGuess);
   const randomInt = (minimum, maximum) => {
