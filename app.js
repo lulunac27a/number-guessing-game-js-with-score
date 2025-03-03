@@ -30,7 +30,7 @@ const game = () => {
     guess = 0;
     maxGuess = 2 ** level;
     secret = randomInt(1, maxGuess);
-    feedback = "";
+    feedbackText.textContent = "";
     maxText.textContent = maxGuess;
     scoreText.textContent = score;
     attemptsText.textContent = attempts;
@@ -44,9 +44,9 @@ const game = () => {
     guess = parseInt(guessText.value);
     if (guess != secret) {
       if (guess > secret) {
-        feedback = "Too high!";
+        feedbackText.textContent = "Too high!";
       } else {
-        feedback = "Too low!";
+        feedbackText.textContent = "Too low!";
       }
       levelScore +=
         maxGuess *
@@ -65,7 +65,7 @@ const game = () => {
         guess = 0;
         maxGuess = 2 ** level;
         secret = randomInt(1, maxGuess);
-        feedback = "Game over!";
+        feedbackText.textContent = "Game over!";
         maxText.textContent = maxGuess;
         scoreText.textContent = score;
         attemptsText.textContent = attempts;
@@ -75,7 +75,8 @@ const game = () => {
         guessButton.disabled = true;
       }
     } else {
-      feedback = "You guessed correctly! + " + levelScore + " points!";
+      feedbackText.textContent =
+        "You guessed correctly! + " + levelScore + " points!";
       score += Math.round(
         ((levelScore * (maxAttempts - attempts + 1)) / (attempts + 1)) *
           maxAttempts,
