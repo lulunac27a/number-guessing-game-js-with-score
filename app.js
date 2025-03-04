@@ -59,9 +59,7 @@ const game = () => {
           Math.max(guess, 1) / Math.max(secret, 1),
           Math.max(secret, 1) / Math.max(guess, 1),
         ) *
-        (guess < secret
-          ? 1 - (guess - secret) / guess
-          : 1 - (secret - guess) / secret); //increase level score
+        (1 - Math.abs(secret - guess) / maxGuess); //increase level score
       attempts++;
       if (attempts >= maxAttempts) {
         //if all attempts used reset game to initial state
