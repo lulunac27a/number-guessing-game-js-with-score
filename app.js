@@ -87,7 +87,13 @@ const game = () => {
     } else {
       //if guess is equal to secret number
       feedbackText.textContent =
-        "You guessed correctly! +" + levelScore + " points!";
+        "You guessed correctly! +" +
+        Math.round(
+          (((levelScore + maxGuess) * (maxAttempts - attempts + 1)) /
+            (attempts + 1)) *
+            maxAttempts,
+        ) +
+        " points!";
       levelScore += maxGuess;
       score += Math.round(
         ((levelScore * (maxAttempts - attempts + 1)) / (attempts + 1)) *
