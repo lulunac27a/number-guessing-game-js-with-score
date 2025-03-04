@@ -59,7 +59,10 @@ const game = () => {
           Math.max(guess, 1) / Math.max(secret, 1),
           Math.max(secret, 1) / Math.max(guess, 1),
         ) *
-        (1 - Math.abs(secret - guess) / maxGuess); //increase level score
+        (1 - Math.abs(secret - guess) / maxGuess) *
+        (guess < secret
+          ? guess / secret
+          : (maxGuess - guess + 1) / (maxGuess - secret + 1)); //increase level score
       attempts++;
       if (attempts >= maxAttempts) {
         //if all attempts used reset game to initial state
@@ -85,6 +88,7 @@ const game = () => {
       //if guess is equal to secret number
       feedbackText.textContent =
         "You guessed correctly! +" + levelScore + " points!";
+      levelScore += maxGuess;
       score += Math.round(
         ((levelScore * (maxAttempts - attempts + 1)) / (attempts + 1)) *
           maxAttempts,
