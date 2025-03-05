@@ -59,7 +59,8 @@ const game = () => {
           Math.max(guess, 1) / Math.max(secret, 1),
           Math.max(secret, 1) / Math.max(guess, 1),
         ) *
-        (1 - Math.abs(secret - guess) / maxGuess) *
+        (1 -
+          Math.abs(secret - guess) / Math.max(secret, maxGuess - secret + 1)) *
         (guess < secret
           ? guess / secret
           : (maxGuess - guess + 1) / (maxGuess - secret + 1)); //increase level score
