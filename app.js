@@ -75,7 +75,6 @@ const game = () => {
         guess = 0;
         maxGuess = 2 ** level;
         secret = randomInt(1, maxGuess);
-        feedbackText.textContent = "Game over!";
         maxText.textContent = maxGuess;
         scoreText.textContent = score;
         attemptsText.textContent = attempts;
