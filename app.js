@@ -54,7 +54,7 @@ const game = () => {
         attempts = 0;
         score = 0;
         levelScore = 0; //set level score to 0
-        maxAttempts = Math.round(level * 0.5);
+        maxAttempts = Math.max(Math.round(level * difficultyMultiplier)); //set max attempts based on level and difficulty
         guess = 0;
         maxGuess = 2 ** level;
         secret = randomInt(1, maxGuess);
@@ -95,10 +95,11 @@ const game = () => {
     }
   };
   let level = 1; //set initial level to 1
+  let difficultyMultiplier = 1; //set difficulty multiplier to 1
   let attempts = 0; //set attempts to 0
   let score = 0; //set score to 0
   let levelScore = 0; //set level score to 0
-  let maxAttempts = Math.round(level * 0.5); //set max attempts based on level and difficulty
+  let maxAttempts = Math.max(Math.round(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
   let guess = 0; //set initial guess value to 0
   let maxGuess = 2 ** level; //set max guess value to 2 raised to level
   let secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
@@ -109,6 +110,23 @@ const game = () => {
   const guessText = document.getElementById("guess"); //guess value text
   const startButton = document.getElementById("start-button"); //start button
   const guessButton = document.getElementById("guess-button"); //guess button
+  const difficultyButton = document.getElementById("difficulty"); //difficulty selection
+  switch (
+    difficultyButton.value //set difficulty based on difficulty selection
+  ) {
+    case "easy":
+      difficultyMultiplier = 1;
+      break;
+    case "medium":
+      difficultyMultiplier = 0.75;
+      break;
+    case "hard":
+      difficultyMultiplier = 0.5;
+      break;
+    case "expert":
+      difficultyMultiplier = 0.25;
+      break;
+  }
   const feedbackText = document.getElementById("feedback"); //feedback text
   startButton.addEventListener("click", startGame); //start game when start button is clicked
   guessButton.addEventListener("click", checkGuess); //check guess when guess button is clicked

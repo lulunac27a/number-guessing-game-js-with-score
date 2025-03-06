@@ -6,6 +6,13 @@
   </head>
   <body>
     <h1>Number Guessing Game with Score</h1>
+    <label for="difficulty">Choose a difficulty level:</label>
+    <select id="difficulty" name="difficulty">
+      <option value="easy" selected>Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+      <option value="expert">Expert</option>
+    </select>
     <p>Guess a number from 1 to <span id="max">x</span></p>
     <p>Score: <span id="score"></span></p>
     <p>Guesses left: <span id="attempts"></span></p>
