@@ -9,7 +9,7 @@ const game = () => {
     attempts = 0; //set attempts to 0
     score = 0; //set score to 0
     levelScore = 0; //set level score to 0
-    maxAttempts = Math.round(level * 0.5); //set max attempts based on level and difficulty
+    maxAttempts = Math.max(Math.round(level * difficultyMultiplier)); //set max attempts based on level and difficulty
     guess = 0; //set initial guess value to 0
     maxGuess = 2 ** level; //set max guess value to 2 raised to level
     secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
