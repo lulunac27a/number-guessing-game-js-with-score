@@ -9,7 +9,7 @@ const game = () => {
     attempts = 0; //set attempts to 0
     score = 0; //set score to 0
     levelScore = 0; //set level score to 0
-    maxAttempts = Math.max(Math.round(level * difficultyMultiplier)); //set max attempts based on level and difficulty
+    maxAttempts = Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
     guess = 0; //set initial guess value to 0
     maxGuess = 2 ** level; //set max guess value to 2 raised to level
     secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
@@ -54,7 +54,7 @@ const game = () => {
         attempts = 0;
         score = 0;
         levelScore = 0; //set level score to 0
-        maxAttempts = Math.max(Math.round(level * difficultyMultiplier)); //set max attempts based on level and difficulty
+        maxAttempts = Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
         guess = 0;
         maxGuess = 2 ** level;
         secret = randomInt(1, maxGuess);
@@ -84,7 +84,7 @@ const game = () => {
       level++; //increase level by 1
       levelScore = 0; //set level score to 0
       attempts = 0; //set attempts to 0
-      maxAttempts = Math.round(level * 0.5); //increase max attempts by 0.5
+      maxAttempts = Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
       maxGuess = 2 ** level; //increase max guess number by double
       secret = randomInt(1, maxGuess); //get random secret guess number
       maxText.textContent = maxGuess;
@@ -99,7 +99,7 @@ const game = () => {
   let attempts = 0; //set attempts to 0
   let score = 0; //set score to 0
   let levelScore = 0; //set level score to 0
-  let maxAttempts = Math.max(Math.round(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
+  let maxAttempts = Math.max(Math.ceil(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
   let guess = 0; //set initial guess value to 0
   let maxGuess = 2 ** level; //set max guess value to 2 raised to level
   let secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
