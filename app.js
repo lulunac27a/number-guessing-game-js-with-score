@@ -1,22 +1,4 @@
 const game = () => {
-  let level = 1; //set initial level to 1
-  let attempts = 0; //set attempts to 0
-  let score = 0; //set score to 0
-  let levelScore = 0; //set level score to 0
-  let maxAttempts = Math.round(level * 0.5); //set max attempts based on level and difficulty
-  let guess = 0; //set initial guess value to 0
-  let maxGuess = 2 ** level; //set max guess value to 2 raised to level
-  let secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
-  const maxText = document.getElementById("max"); //max guess value text
-  const scoreText = document.getElementById("score"); //score text
-  const attemptsText = document.getElementById("attempts"); //attempts text
-  const levelText = document.getElementById("level"); //level text
-  const guessText = document.getElementById("guess"); //guess value text
-  const startButton = document.getElementById("start-button"); //start button
-  const guessButton = document.getElementById("guess-button"); //guess button
-  const feedbackText = document.getElementById("feedback"); //feedback text
-  startButton.addEventListener("click", startGame); //start game when start button is clicked
-  guessButton.addEventListener("click", checkGuess); //check guess when guess button is clicked
   const randomInt = (minimum, maximum) => {
     //get random integer
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -112,5 +94,23 @@ const game = () => {
       guessText.max = maxGuess;
     }
   };
+  let level = 1; //set initial level to 1
+  let attempts = 0; //set attempts to 0
+  let score = 0; //set score to 0
+  let levelScore = 0; //set level score to 0
+  let maxAttempts = Math.round(level * 0.5); //set max attempts based on level and difficulty
+  let guess = 0; //set initial guess value to 0
+  let maxGuess = 2 ** level; //set max guess value to 2 raised to level
+  let secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
+  const maxText = document.getElementById("max"); //max guess value text
+  const scoreText = document.getElementById("score"); //score text
+  const attemptsText = document.getElementById("attempts"); //attempts text
+  const levelText = document.getElementById("level"); //level text
+  const guessText = document.getElementById("guess"); //guess value text
+  const startButton = document.getElementById("start-button"); //start button
+  const guessButton = document.getElementById("guess-button"); //guess button
+  const feedbackText = document.getElementById("feedback"); //feedback text
+  startButton.addEventListener("click", startGame); //start game when start button is clicked
+  guessButton.addEventListener("click", checkGuess); //check guess when guess button is clicked
 };
 game();
