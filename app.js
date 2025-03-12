@@ -19,7 +19,7 @@ const game = () => {
     feedbackText.textContent = "";
     maxText.textContent = maxGuess;
     scoreText.textContent = score;
-    attemptsText.textContent = attempts;
+    attemptsText.textContent = maxAttempts - attempts;
     levelText.textContent = level;
     guessText.max = maxGuess;
     guessText.value = guess;
@@ -67,7 +67,7 @@ const game = () => {
         secret = randomInt(1, maxGuess);
         maxText.textContent = maxGuess;
         scoreText.textContent = score;
-        attemptsText.textContent = attempts;
+        attemptsText.textContent = maxAttempts - attempts;
         levelText.textContent = level;
         guessText.max = maxGuess;
         startButton.disabled = false; //enable start button
@@ -99,7 +99,7 @@ const game = () => {
       secret = randomInt(1, maxGuess); //get random secret guess number
       maxText.textContent = maxGuess;
       scoreText.textContent = score;
-      attemptsText.textContent = attempts;
+      attemptsText.textContent = maxAttempts - attempts;
       levelText.textContent = level;
       guessText.max = maxGuess;
     }
