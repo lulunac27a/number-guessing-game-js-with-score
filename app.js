@@ -12,7 +12,7 @@ const game = () => {
         maxAttempts =
             modeButton.value === "attempts"
                 ? attemptsLimit
-                : Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
+                : Math.max(Math.ceil(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
         guess = 0; //set initial guess value to 0
         maxGuess = 2 ** level; //set max guess value to 2 raised to level
         secret = randomInt(1, maxGuess); //set secret value to random integer between 1 and max guess value
@@ -61,7 +61,7 @@ const game = () => {
                 maxAttempts =
                     modeButton.value === "attempts"
                         ? attemptsLimit
-                        : Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
+                        : Math.max(Math.ceil(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
                 guess = 0;
                 maxGuess = 2 ** level;
                 secret = randomInt(1, maxGuess);
@@ -94,7 +94,7 @@ const game = () => {
             maxAttempts =
                 modeButton.value === "attempts"
                     ? attemptsLimit
-                    : Math.max(Math.ceil(level * difficultyMultiplier)); //set max attempts based on level and difficulty
+                    : Math.max(Math.ceil(level * difficultyMultiplier), 1); //set max attempts based on level and difficulty
             maxGuess = 2 ** level; //increase max guess number by double
             secret = randomInt(1, maxGuess); //get random secret guess number
             maxText.textContent = maxGuess;
