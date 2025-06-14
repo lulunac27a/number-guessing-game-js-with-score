@@ -45,7 +45,8 @@ const game = () => {
                     Math.max(secret, 1) / Math.max(guess, 1),
                 ) *
                 (1 -
-                    Math.abs(secret - guess) / Math.max(secret, maxGuess - secret + 1)) *
+                    Math.abs(secret - guess) /
+                        Math.max(secret, maxGuess - secret + 1)) *
                 (guess < secret
                     ? guess / secret
                     : (maxGuess - guess + 1) / (maxGuess - secret + 1)); //increase level score
@@ -53,7 +54,8 @@ const game = () => {
             attemptsText.textContent = maxAttempts - attempts;
             if (attempts >= maxAttempts) {
                 //if all attempts used reset game to initial state
-                feedbackText.textContent = "Game over! Your score is " + score + ".";
+                feedbackText.textContent =
+                    "Game over! Your score is " + score + ".";
                 level = 1;
                 attempts = 0;
                 score = 0;
@@ -80,13 +82,13 @@ const game = () => {
                 Math.round(
                     (((levelScore + maxGuess) * (maxAttempts - attempts + 1)) /
                         (attempts + 1)) *
-                    maxAttempts,
+                        maxAttempts,
                 ) +
                 " points!";
             levelScore += maxGuess;
             score += Math.round(
                 ((levelScore * (maxAttempts - attempts + 1)) / (attempts + 1)) *
-                maxAttempts,
+                    maxAttempts,
             ); //increase score by level score
             level++; //increase level by 1
             levelScore = 0; //set level score to 0
@@ -127,7 +129,7 @@ const game = () => {
     const guessButton = document.getElementById("guess-button"); //guess button
     const difficultyButton = document.getElementById("difficulty"); //difficulty selection
     switch (
-    difficultyButton.value //set difficulty based on difficulty selection
+        difficultyButton.value //set difficulty based on difficulty selection
     ) {
         case "easy":
             difficultyMultiplier = 1;
